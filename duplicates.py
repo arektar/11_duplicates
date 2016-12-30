@@ -12,11 +12,7 @@ if __name__ == '__main__':
     for path, dirs, files in os.walk(root):
         for fname in files:
            file_list.append(os.path.join(path, fname))
-    while file_list:
-        file1=file_list.pop(0)
-        for file2 in file_list:
+    for file1,file2 in itertools.combinations(file_list,2):
             if are_files_duplicates(file1,file2):
-                print(file1)
-                print(file2)
-                print()
+                print(file1 + "\n" + file2 + "\n")
 
