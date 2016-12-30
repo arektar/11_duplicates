@@ -1,12 +1,10 @@
 import os, filecmp
 
 def are_files_duplicates(file_path1, file_path_2):
-    is_copy=False
     if os.path.basename(file_path1)==os.path.basename(file_path_2):
-        if os.path.getsize(file_path1)==os.path.getsize(file_path_2):
-            if filecmp.cmp(file_path1,file_path_2):
-                is_copy=True
-    return is_copy
+        if filecmp.cmp(file_path1,file_path_2):
+            return True
+    return False
 
 
 if __name__ == '__main__':
