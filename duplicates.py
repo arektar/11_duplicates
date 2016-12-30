@@ -10,8 +10,7 @@ def are_files_duplicates(file_path1, file_path_2):
 
 
 if __name__ == '__main__':
-    #root=input("Write watching dir way: ")
-    root=r'D:\dropbox'
+    root=input("Write watching dir way: ")
     root=root+"\\"
     file_list = []
     for path, dirs, files in os.walk(root):
