@@ -1,8 +1,8 @@
 import os, filecmp
 
 def are_files_duplicates(file_path1, file_path_2):
-        if filecmp.cmp(file_path1,file_path_2):
-            return True
+    if filecmp.cmp(file_path1,file_path_2):
+        return True
     return False
 
 
