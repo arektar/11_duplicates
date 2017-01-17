@@ -20,17 +20,16 @@ def receive_all_file_ways(root):
 
 
 def look_files(filedict):
-    dict_of_equal_files = collections.defaultdict(list)
+    dict_of_equal_files = collections.defaultdict(set)
     for name in list(filedict):
-        if len(filedict[name]) > 1:
-            for way1, way2 in itertools.combinations(filedict[name], 2):
-                full_filename1 = os.path.join(way1, name)
-                full_filename2 = os.path.join(way2, name)
-                if are_files_duplicates(full_filename1, full_filename2):
-                    if full_filename1 not in dict_of_equal_files[name]:
-                        dict_of_equal_files[name].append(full_filename1)
-                    if full_filename2 not in dict_of_equal_files[name]:
-                        dict_of_equal_files[name].append(full_filename2)
+        if len(filedict[name]) <= 1:
+            continue
+        for way1, way2 in itertools.combinations(filedict[name], 2):
+            full_filename1 = os.path.join(way1, name)
+            full_filename2 = os.path.join(way2, name)
+            if are_files_duplicates(full_filename1, full_filename2):
+                dict_of_equal_files[name].add(full_filename1)
+                dict_of_equal_files[name].add(full_filename2)
     return dict_of_equal_files
 
 
