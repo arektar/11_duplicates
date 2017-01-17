@@ -1,6 +1,7 @@
 import os
 import filecmp
 import itertools
+import collections
 
 
 def are_files_duplicates(file_path1, file_path_2):
@@ -19,18 +20,16 @@ def receive_all_file_ways(root):
 
 
 def look_files(filedict):
-    dict_of_equal_files = {}
+    dict_of_equal_files = collections.defaultdict(list)
     for name in list(filedict):
         if len(filedict[name]) > 1:
             for way1, way2 in itertools.combinations(filedict[name], 2):
                 full_filename1 = os.path.join(way1, name)
                 full_filename2 = os.path.join(way2, name)
                 if are_files_duplicates(full_filename1, full_filename2):
-                    if name not in dict_of_equal_files.keys():
-                        dict_of_equal_files[name] = list()
-                    if way1 not in dict_of_equal_files[name]:
+                    if full_filename1 not in dict_of_equal_files[name]:
                         dict_of_equal_files[name].append(full_filename1)
-                    if way2 not in dict_of_equal_files[name]:
+                    if full_filename2 not in dict_of_equal_files[name]:
                         dict_of_equal_files[name].append(full_filename2)
     return dict_of_equal_files
 
