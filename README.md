@@ -32,9 +32,6 @@ D:\загрузки\Ария\2011 - Эхо судного дня\Covers\CD 1\03.
 D:\загрузки\Ария\2011 - Эхо судного дня\Covers\CD 2\01.jpg
 D:\загрузки\Ария\2011 - Эхо судного дня\Covers\CD 1\01.jpg
 
-D:\загрузки\AionRU_4.6\bin32\msvcr71.dll
-D:\загрузки\djvureader_2_0_0_26\djvureader_2_0_0_26\msvcr71.dll
-
 D:\загрузки\ida_pro_5.0.0.879\ida_pro_5.0.0.879\flair\startup\sh3\startup.bat
 D:\загрузки\ida_pro_5.0.0.879\ida_pro_5.0.0.879\flair\startup\h8\startup.bat
 D:\загрузки\ida_pro_5.0.0.879\ida_pro_5.0.0.879\flair\startup\arm\startup.bat
