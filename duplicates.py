@@ -41,8 +41,7 @@ def look_files(dict_of_files):
 
 
 if __name__ == '__main__':
-    #my_root = parse_arguments()
-    my_root="D:\загрузки"
+    my_root = parse_arguments()
     my_dict_of_files = receive_all_file_ways(my_root)
     my_dict_of_equal_files = look_files(my_dict_of_files)
     print("Duplicates:")
